@@ -1,12 +1,10 @@
-export async function handler(event, context) {
-  const username = event.queryStringParameters.username || "octocat";
+export async function handler(event) {
+  const username = event.queryStringParameters?.username || "octocat";
   const token = process.env.GITHUB_TOKEN;
 
   try {
     const res = await fetch(`https://api.github.com/users/${username}`, {
-      headers: {
-        Authorization: `token ${token}`,
-      },
+      headers: { Authorization: `token ${token}` },
     });
 
     if (!res.ok) {

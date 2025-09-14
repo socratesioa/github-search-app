@@ -1,5 +1,3 @@
-import fetch from "node-fetch";
-
 export async function handler(event, context) {
   const username = event.queryStringParameters.username || "octocat";
   const token = process.env.GITHUB_TOKEN;

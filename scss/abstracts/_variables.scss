@@ -1,0 +1,37 @@
+// COLOR PALETTE
+$neutral900: #141d2f;
+$neutral800: #1e2a47;
+$neutral700: #2b3442;
+$neutral500: #4b6a9b;
+$neutral300: #697c9a;
+$neutral200: #90a4d4;
+$neutral100: #f6f8ff;
+$neutral0: #ffffff;
+$blue300: #60abff;
+$blue500: #0079ff;
+$red500: #f74646;
+$white70: hsla(0, 0%, 100%, 0.7);
+$black75: hsla(217, 35%, 45%, 0.75);
+
+// SEMANTIC VALUES
+$clr-dm-body-bg: $neutral900;
+$clr-dm-body-text-primary: $neutral0;
+$clr-dm-body-text-light: $white70;
+$clr-dm-container-bg: $neutral800;
+$clr-dm-mode-button: $neutral200;
+$clr-blue-dark: $blue500;
+$clr-blue-light: $blue300;
+$clr-lm-body-bg: $neutral100;
+$clr-lm-body-text-dark: $neutral900;
+$clr-lm-body-text-primary: $neutral700;
+$clr-lm-body-text-light: $neutral500;
+$clr-lm-body-text-very-light: $black75;
+$clr-lm-container-bg: $neutral0;
+$clr-lm-stats-bg: $neutral100;
+$clr-lm-mode-button: $neutral500;
+$clr-lm-notfound-text: $neutral300;
+$clr-error: $red500;
+
+// SHADOWS
+
+$lm-box-shadow: 0 16px 30px -10px hsla(227, 46%, 51%, 0.2);

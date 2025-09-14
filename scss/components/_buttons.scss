@@ -1,0 +1,61 @@
+@use "../abstracts" as *;
+@use "../base/typography" as typo;
+
+#modeToggle {
+  background: none;
+  border: none;
+  outline: none;
+  color: $clr-dm-mode-button;
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  @include text-preset(typo.$text-preset-8);
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+#modeToggle:hover {
+  color: $clr-dm-body-text-primary;
+}
+
+#modeToggle:focus-visible {
+  outline-offset: 3px;
+  outline: 2px solid $clr-blue-dark;
+  border-radius: 4px;
+  color: $clr-dm-body-text-primary;
+}
+
+body.light #modeToggle {
+  color: $clr-lm-mode-button;
+}
+
+body.light #modeToggle:hover {
+  color: $clr-lm-body-text-primary;
+}
+
+body.light #modeToggle:focus-visible {
+  color: $clr-lm-body-text-primary;
+}
+
+#searchBtn {
+  border: none;
+  outline: none;
+  background-color: $clr-blue-dark;
+  color: $clr-dm-body-text-primary;
+  @include text-preset(typo.$text-preset-5);
+  width: 99px;
+  height: 48px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+#searchBtn:hover {
+  background-color: $clr-blue-light;
+}
+
+#searchBtn:focus-visible {
+  outline-offset: 2px;
+  outline: 2px solid $clr-blue-dark;
+}

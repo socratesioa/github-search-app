@@ -1,0 +1,200 @@
+@use "../abstracts" as *;
+@use "../base/typography" as typo;
+
+#profile-container {
+  background-color: $clr-dm-container-bg;
+  margin-top: 32px;
+  border-radius: 16px;
+  padding: 32px 24px;
+  display: grid;
+  gap: 24px;
+  @include respond(medium, min) {
+    padding: 48px;
+    grid-template-columns: 117px auto;
+    grid-template-rows: auto auto;
+    column-gap: 32px;
+    row-gap: 24px;
+  }
+}
+
+body.light #profile-container {
+  background-color: $clr-lm-container-bg;
+  box-shadow: $lm-box-shadow;
+}
+
+.github-header {
+  display: grid;
+  grid-template-columns: 70px auto;
+  grid-template-rows: auto auto;
+  grid-template-areas:
+    "profile-img user"
+    "bio bio";
+  gap: 20px;
+  @include respond(medium, min) {
+    grid-template-columns: 117px auto;
+    grid-template-rows: auto auto;
+    grid-template-areas:
+      "profile-img user"
+      "profile-img bio";
+    column-gap: 32px;
+    row-gap: 0;
+    grid-row: 1;
+    grid-column: span 2;
+  }
+}
+
+#profile-image-wrapper {
+  background-color: $clr-lm-body-bg;
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  grid-area: profile-img;
+  @include respond(medium, min) {
+    width: 117px;
+    height: 117px;
+  }
+}
+
+#profile-user {
+  display: grid;
+  gap: 4px;
+  grid-area: user;
+  align-items: start;
+  @include respond(medium, min) {
+    align-content: start;
+    display: flex;
+    justify-content: space-between;
+  }
+}
+
+.username-wrapper {
+  display: grid;
+  gap: 2px;
+  align-content: start;
+}
+
+.github-profile {
+  display: grid;
+  gap: 24px;
+  @include respond(medium, min) {
+    grid-row: 2;
+    grid-column: 2;
+  }
+}
+#bio {
+  @include text-preset(typo.$text-preset-6);
+  color: $clr-dm-body-text-primary;
+  grid-area: bio;
+}
+
+body.light #bio {
+  color: $clr-lm-body-text-light;
+}
+
+#github-name {
+  @include text-preset(typo.$text-preset-1);
+}
+
+#github-username {
+  @include text-preset(typo.$text-preset-4);
+  color: $clr-blue-light;
+}
+
+body.light #github-username {
+  color: $clr-blue-dark;
+}
+
+#github-date {
+  @include text-preset(typo.$text-preset-6);
+}
+
+body.light #github-date {
+  color: $clr-lm-body-text-light;
+}
+
+.gihub-stats {
+  background-color: $clr-dm-body-bg;
+  border-radius: 10px;
+  padding: 16px;
+  display: grid;
+  gap: 16px;
+  @include respond(medium, min) {
+    padding: 16px 32px;
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+body.light .gihub-stats {
+  background-color: $clr-lm-body-bg;
+}
+
+.github-repos,
+.github-followers,
+.github-following {
+  display: grid;
+  gap: 4px;
+}
+
+#repos,
+#followers,
+#following {
+  @include text-preset(typo.$text-preset-2);
+}
+
+ul {
+  list-style: none;
+  display: grid;
+  gap: 16px;
+  @include respond(medium, min) {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+li {
+  display: grid;
+  grid-template-columns: 20px auto;
+  gap: 16px;
+  align-items: center;
+  @include text-preset(typo.$text-preset-6);
+}
+
+body.light li {
+  color: $clr-lm-body-text-dark;
+}
+
+body.light li span {
+  color: $clr-lm-body-text-light;
+}
+
+a {
+  text-decoration: none;
+  color: $clr-dm-body-text-primary;
+  outline: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+a:focus-visible {
+  outline-offset: 3px;
+  outline: 2px solid $clr-blue-dark;
+  border-radius: 4px;
+}
+
+body.light a {
+  color: $clr-lm-body-text-light;
+}
+
+.not-available {
+  color: $clr-dm-body-text-light;
+}
+
+body.light .not-available {
+  color: $clr-lm-body-text-very-light;
+}
+
+body.light svg.not-available {
+  color: $clr-lm-body-text-dark;
+  opacity: 0.7;
+}

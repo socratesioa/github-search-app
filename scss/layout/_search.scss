@@ -1,0 +1,124 @@
+@use "../abstracts" as *;
+@use "../base/typography" as typo;
+
+form {
+  height: 69px;
+  background-color: $clr-dm-container-bg;
+  padding: 0 12px;
+  border-radius: 12px;
+  display: grid;
+  grid-template-columns: auto 99px;
+  align-items: center;
+  @include respond(medium, min) {
+    padding: 0 24px;
+  }
+}
+
+form:focus-visible {
+  outline-offset: 3px;
+  outline: 2px solid $clr-blue-dark;
+}
+
+form:focus-within {
+  outline-offset: 3px;
+  outline: 2px solid $clr-blue-dark;
+}
+
+body.light form {
+  background-color: $clr-lm-container-bg;
+  box-shadow: $lm-box-shadow;
+}
+
+.input-group {
+  display: grid;
+  grid-template-columns: 20px auto;
+  gap: 12px;
+  align-items: center;
+  min-width: 0;
+  position: relative;
+  @include respond(medium, min) {
+    gap: 20px;
+    grid-template-columns: 24px auto;
+  }
+  @include respond(large, min) {
+    grid-template-columns: 25px auto;
+  }
+}
+
+input {
+  @include text-preset(typo.$text-preset-3-mobile);
+  background: transparent;
+  border: none;
+  outline: none;
+  color: $clr-dm-body-text-primary;
+  flex: 1 1 auto;
+  min-width: 0;
+
+  @include respond(medium, min) {
+    @include text-preset(typo.$text-preset-3);
+  }
+}
+
+#error {
+  position: absolute;
+  right: 16px;
+  @include text-preset(typo.$text-preset-5);
+  color: $clr-error;
+  @include respond(medium, min) {
+    right: 24px;
+  }
+}
+
+body.light input {
+  color: $clr-lm-body-text-very-light;
+}
+
+.searchIcon {
+  width: 20px;
+  height: 20px;
+  color: $clr-blue-light;
+  @include respond(medium, min) {
+    width: 24px;
+    height: 24px;
+  }
+  @include respond(large, min) {
+    width: 25px;
+  }
+}
+
+body.light .searchIcon {
+  color: $clr-blue-dark;
+}
+
+#user-not-found {
+  background-color: $clr-dm-container-bg;
+  margin-top: 32px;
+  border-radius: 16px;
+  padding: 32px 24px;
+  display: none;
+  flex-direction: column;
+  text-align: center;
+  gap: 16px;
+  opacity: 0;
+  @include respond(medium, min) {
+    padding: 48px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    gap: 16px;
+  }
+}
+
+body.light #user-not-found {
+  background-color: $clr-lm-container-bg;
+  box-shadow: $lm-box-shadow;
+}
+
+#user-not-found p {
+  @include text-preset(typo.$text-preset-6);
+  color: $clr-dm-mode-button;
+}
+
+body.light #user-not-found p {
+  color: $clr-lm-notfound-text;
+}

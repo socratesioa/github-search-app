@@ -1,0 +1,103 @@
+@use "../abstracts" as *;
+
+@import url("https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap");
+
+$font-body: "Space Mono", monospace;
+
+$text-preset-1: (
+  family: $font-body,
+  size: 26px,
+  lineHeight: 1.2,
+  letterSpacing: 0,
+  weight: 700,
+);
+
+$text-preset-2: (
+  family: $font-body,
+  size: 22px,
+  lineHeight: 1.4,
+  letterSpacing: 0,
+  weight: 700,
+);
+
+$text-preset-3: (
+  family: $font-body,
+  size: 18px,
+  lineHeight: 1.4,
+  letterSpacing: 0,
+  weight: 400,
+);
+
+$text-preset-3-mobile: (
+  family: $font-body,
+  size: 13px,
+  lineHeight: 1.4,
+  letterSpacing: 0,
+  weight: 400,
+);
+
+$text-preset-4: (
+  family: $font-body,
+  size: 16px,
+  lineHeight: 1.5,
+  letterSpacing: 0,
+  weight: 400,
+);
+
+$text-preset-5: (
+  family: $font-body,
+  size: 16px,
+  lineHeight: 1.5,
+  letterSpacing: 0,
+  weight: 700,
+);
+
+$text-preset-6: (
+  family: $font-body,
+  size: 15px,
+  lineHeight: 1.5,
+  letterSpacing: 0,
+  weight: 400,
+);
+
+$text-preset-7: (
+  family: $font-body,
+  size: 13px,
+  lineHeight: 1.5,
+  letterSpacing: 0,
+  weight: 400,
+);
+
+$text-preset-8: (
+  family: $font-body,
+  size: 13px,
+  lineHeight: 1.4,
+  letterSpacing: 2.5px,
+  weight: 700,
+);
+
+body {
+  font-family: $font-body;
+}
+
+h1 {
+  @include text-preset($text-preset-1);
+  line-height: 1;
+}
+
+body.light h1 {
+  color: $clr-lm-body-text-dark;
+}
+
+h2 {
+  @include text-preset($text-preset-2);
+}
+
+h3 {
+  @include text-preset($text-preset-7);
+}
+
+body.light h3,
+body.light h2 {
+  color: $clr-lm-body-text-light;
+}

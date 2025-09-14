@@ -1,0 +1,16 @@
+@use "../abstracts" as *;
+
+header {
+  padding: 32px 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  @include respond(medium, min) {
+    max-width: 764px;
+    margin: 0 auto;
+    padding: 40px 32px 40px 32px;
+  }
+  @include respond(large, min) {
+    padding: 130px 32px 40px 32px;
+  }
+}

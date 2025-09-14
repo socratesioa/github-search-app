@@ -1,0 +1,53 @@
+@use "../abstracts" as *;
+@use "../base/typography" as typo;
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: $clr-dm-body-bg;
+  color: $clr-dm-body-text-primary;
+}
+
+body.light {
+  background-color: $clr-lm-body-bg;
+  color: $clr-lm-body-text-primary;
+}
+
+main {
+  padding: 0 16px 136px 16px;
+  @include respond(small, min) {
+    max-width: 764px;
+    margin: 0 auto;
+    padding: 0 32px 40px 32px;
+  }
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  border: 0;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+input[type="number"] {
+  -moz-appearance: textfield; /* Firefox */
+  -webkit-appearance: none; /* Safari/Chrome */
+  appearance: textfield; /* Standard */
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
